@@ -1,34 +1,33 @@
-public class Demo
+abstract class Vehicle
 {
-    private String name;
-    private int age;
-    public Demo()
-    {
-     System.out.println("Constructor");    }
-     public int getAge()
-     {
-        return age;
-     }
-     public String getName()
-     {
-        return name;
-     }
-     public void setAge( int age)
-     {
-        this.age=age;
-     }
-     public void setName(String name)
-     {
-        this.name=name;
-     }
-
-     public static void main(String a[])
-    {
-        Demo obj=new Demo();
-        System.out.println(obj.getName()+ ":" + obj.getAge() );
-        obj.setName("Patnala Shanmukh");
-        obj.setAge(21);
-        System.out.println("updated info" );
-        System.out.println(obj.getName()+ ":" + obj.getAge() );
-    }
+    String brand;
+  public abstract void displayDetails();
+  public void startEngine()
+  {
+    System.out.println(" Engine started for " + brand);
+  }
 }
+class Car extends Vehicle
+{
+    Integer speed;
+    Car( String brand, Integer speed)
+    {
+        this.brand=brand;
+        this.speed=speed;
+    }
+    public void displayDetails()
+    {
+        System.out.println("Brand :" + brand );
+        System.out.println("Speed :" + speed + "km/h" );
+    }
+    
+}
+  public class Demo
+ {
+    public static void main(String a[])
+    {
+        Car obj = new Car("Tata",80);
+        obj.startEngine();
+        obj.displayDetails();
+    }
+ }
