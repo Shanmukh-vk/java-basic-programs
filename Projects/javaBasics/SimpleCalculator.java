@@ -6,10 +6,11 @@ public class SimpleCalculator
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your first number");
         int a =sc.nextInt();
-        System.out.println("Enter your operator");
-        char op = sc.next().charAt(0);
         System.out.println("Enter your second number");
         int b =sc.nextInt();
+        System.out.println("Enter your operator");
+        char op = sc.next().charAt(0);
+        
         switch (op) {
             case '+':
                 System.out.println("Result = " + (a+b));
